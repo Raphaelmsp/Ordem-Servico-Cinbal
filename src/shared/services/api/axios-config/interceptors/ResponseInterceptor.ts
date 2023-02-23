@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
 
 
-export const responseInterceptor = (response: AxiosResponse) => {
+export function responseInterceptor({ response }: { response: AxiosResponse; }) {
   return response;
-};
+}

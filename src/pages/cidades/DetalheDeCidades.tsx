@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Box, Grid, LinearProgress, Paper, Typography } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import * as yup from "yup";
+import React from "react";
 
 import { CidadesService } from "../../shared/services/api/cidades/CidadesService";
 import { VTextField, useVForm, IVFormErrors, VForm } from "../../shared/forms";

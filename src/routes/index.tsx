@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import React from "react";

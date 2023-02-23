@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Switch, SwitchProps } from '@mui/material';
 import { useField } from '@unform/core';
-
+import React from "react";
 
 type TVSwitchProps = SwitchProps & {
   name: string;

@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-
+import React from "react";
 import { AuthService } from '../services/api/auth/AuthService';
 
 interface IAuthContextData {
