@@ -39,7 +39,7 @@ export const Dashboard = () => {
 
   return (
     <LayoutBaseDePagina
-      titulo="Página inicial"
+      titulo="Dashboard O.S"
       barraDeFerramentas={<FerramentasDaListagem mostrarBotaoNovo={false} />}
     >
       <Box width="100%" display="flex">
@@ -49,7 +49,7 @@ export const Dashboard = () => {
               <Card>
                 <CardContent>
                   <Typography variant="h5" align="center">
-                    Total de pessoas
+                    Total de o.s abertas
                   </Typography>
 
                   <Box
@@ -72,7 +72,7 @@ export const Dashboard = () => {
               <Card>
                 <CardContent>
                   <Typography variant="h5" align="center">
-                    Total de cidades
+                  Total de o.s finalizadas
                   </Typography>
 
                   <Box

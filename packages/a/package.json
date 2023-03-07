@@ -1,0 +1,12 @@
+{
+  "name": "p",
+  "version": "1.0.0",
+  "description": "-p",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "--workspace=a"
+  },
+  "author": "",
+  "license": "ISC"
+}

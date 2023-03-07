@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { TextField, TextFieldProps } from "@mui/material";
 import { NumericFormatProps, NumericFormat } from "react-number-format";
 import { useField } from "@unform/core";
-import axios from "axios";
+
 
 type TVTextFieldProps = Omit<NumericFormatProps, "value"> &
   Omit<TextFieldProps, "value"> & {
@@ -39,6 +39,7 @@ export const VNumericFormat: React.FC<TVTextFieldProps> = ({
 
   return (
     <NumericFormat
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       {...(rest as any)}
       customInput={TextField}
       value={value}

@@ -4,11 +4,12 @@ import "./shared/forms/TraducoesYup";
 
 import {
   AppThemeProvider,
-  AuthProvider,
+
   DrawerProvider,
 } from "./shared/contexts";
 import { Login, MenuLateral } from "./shared/components";
 import { AppRoutes } from "./routes";
+import { AuthProvider } from './shared/contexts/AuthContext';
 
 export const App = () => {
   return (
