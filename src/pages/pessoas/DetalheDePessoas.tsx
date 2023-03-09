@@ -121,7 +121,7 @@ export const DetalheDePessoas: React.FC = () => {
 
   return (
     <LayoutBaseDePagina
-      titulo={id === "nova" ? "Nova pessoa" : nome}
+      titulo={id === "nova" ? "Nova O.S" : nome}
       barraDeFerramentas={
         <FerramentasDeDetalhe
           textoBotaoNovo="Nova"
@@ -161,7 +161,7 @@ export const DetalheDePessoas: React.FC = () => {
                   fullWidth
                   name="nomeCompleto"
                   disabled={isLoading}
-                  label="Nome completo"
+                  label="Prestadora de Serviço"
                   onChange={(e) => setNome(e.target.value)}
                 />
               </Grid>

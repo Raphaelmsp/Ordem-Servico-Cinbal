@@ -111,7 +111,7 @@ export const DetalheDeCidades: React.FC = () => {
 
   return (
     <LayoutBaseDePagina
-      titulo={id === "nova" ? "Nova cidade" : nome}
+      titulo={id === "nova" ? "Nova O.S" : nome}
       barraDeFerramentas={
         <FerramentasDeDetalhe
           textoBotaoNovo="Nova"

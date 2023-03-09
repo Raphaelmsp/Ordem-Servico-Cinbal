@@ -67,7 +67,7 @@ export const ListagemDePessoas: React.FC = () => {
 
   return (
     <LayoutBaseDePagina
-      titulo='Listagem de pessoas'
+      titulo='O.S Finalizada'
       barraDeFerramentas={
         <FerramentasDaListagem
           mostrarInputBusca
@@ -83,8 +83,9 @@ export const ListagemDePessoas: React.FC = () => {
           <TableHead>
             <TableRow>
               <TableCell width={100}>Ações</TableCell>
-              <TableCell>Nome completo</TableCell>
+              <TableCell>Prestadora de Serviço</TableCell>
               <TableCell>Email</TableCell>
+              <TableCell>ID</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -95,11 +96,12 @@ export const ListagemDePessoas: React.FC = () => {
                     <Icon>delete</Icon>
                   </IconButton>
                   <IconButton size="small" onClick={() => navigate(`/pessoas/detalhe/${row.id}`)}>
-                    <Icon>edit</Icon>
+                    <Icon>editar</Icon>
                   </IconButton>
                 </TableCell>
                 <TableCell>{row.nomeCompleto}</TableCell>
                 <TableCell>{row.email}</TableCell>
+                <TableCell>{row.cidadeId}</TableCell>
               </TableRow>
             ))}
           </TableBody>

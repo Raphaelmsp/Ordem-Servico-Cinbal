@@ -19,17 +19,17 @@ export const AppRoutes = () => {
       {
         icon: "home",
         path: "/pagina-inicial",
-        label: "Página inicial",
+        label: "Dashboard",
       },
       {
         icon: "location_city",
         path: "/cidades",
-        label: "Cidades",
+        label: "O.S Aberta",
       },
       {
         icon: "people",
         path: "/pessoas",
-        label: "Pessoas",
+        label: "O.S Finalizada",
       },
     ]);
   }, [setDrawerOptions]);

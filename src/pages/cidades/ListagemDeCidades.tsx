@@ -78,7 +78,7 @@ export const ListagemDeCidades: React.FC = () => {
 
   return (
     <LayoutBaseDePagina
-      titulo="Listagem de cidades"
+      titulo="O.S Aberta"
       barraDeFerramentas={
         <FerramentasDaListagem
           mostrarInputBusca
@@ -100,7 +100,7 @@ export const ListagemDeCidades: React.FC = () => {
           <TableHead>
             <TableRow>
               <TableCell width={100}>Ações</TableCell>
-              <TableCell>Nome</TableCell>
+              <TableCell>Prestadora de Serviço</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -108,13 +108,13 @@ export const ListagemDeCidades: React.FC = () => {
               <TableRow key={row.id}>
                 <TableCell>
                   <IconButton size="small" onClick={() => handleDelete(row.id)}>
-                    <Icon>delete</Icon>
+                    <Icon>deletar</Icon>
                   </IconButton>
                   <IconButton
                     size="small"
                     onClick={() => navigate(`/cidades/detalhe/${row.id}`)}
                   >
-                    <Icon>edit</Icon>
+                    <Icon>editar</Icon>
                   </IconButton>
                 </TableCell>
                 <TableCell>{row.nome}</TableCell>
