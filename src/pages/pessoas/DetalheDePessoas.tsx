@@ -12,6 +12,8 @@ import { AutoCompleteCidade } from "./components/AutoCompleteCidade";
 import { FerramentasDeDetalhe } from "../../shared/components";
 import { LayoutBaseDePagina } from "../../shared/layouts";
 
+
+
 interface IFormData {
   email: string;
   cidadeId: number;
@@ -155,8 +157,21 @@ export const DetalheDePessoas: React.FC = () => {
               <Typography variant="h6">Geral</Typography>
             </Grid>
 
+            <Grid container item direction="row" spacing={75}>
+              <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
+                <VTextField
+                  fullWidth
+                  name="Solicitante"
+                  disabled
+                  label="Cinbal Incoflandres"
+                  onChange={(e) => setNome(e.target.value)}
+
+                />
+              </Grid>
+            </Grid>
+
             <Grid container item direction="row" spacing={2}>
-              <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+              <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
                 <VTextField
                   fullWidth
                   name="nomeCompleto"
@@ -168,7 +183,7 @@ export const DetalheDePessoas: React.FC = () => {
             </Grid>
 
             <Grid container item direction="row" spacing={2}>
-              <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+              <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
                 <VTextField
                   fullWidth
                   name="email"
@@ -178,11 +193,38 @@ export const DetalheDePessoas: React.FC = () => {
               </Grid>
             </Grid>
 
-            <Grid container item direction="row" spacing={2}>
+            <Grid container item direction="row" spacing={2} >
+              <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+                <VTextField
+                  fullWidth
+                  name="Data"
+                  label="Data"
+                  disabled={isLoading}
+                />
+              </Grid>
+            </Grid>
+
+            <Grid container item direction="row" spacing={2} >
               <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
                 <AutoCompleteCidade isExternalLoading={isLoading} />
               </Grid>
             </Grid>
+
+            <Grid container item direction="row" spacing={2}>
+              <Grid item xs={12} sm={12} md={6} lg={4} xl={10}>
+                <VTextField
+                  fullWidth
+                  multiline
+                  rows={8}
+                  name="Atividade a ser executada"
+                  align-text-center="center"
+                  label="Atividade a ser executada"
+                  disabled={isLoading}
+
+                />
+              </Grid>
+            </Grid>
+
           </Grid>
         </Box>
       </VForm>

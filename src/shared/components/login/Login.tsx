@@ -70,7 +70,7 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
           <ListItemIcon>
             <Icon>dark_mode</Icon>
           </ListItemIcon>
-          <ListItemText primary="Alterar tema" />
+          <ListItemText primary="" />
         </ListItemButton>
         <ListItemButton onClick={logout}>
           <ListItemIcon>
@@ -87,9 +87,10 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
     >
       <Card>
         <CardContent>
-          <Box display="flex" flexDirection="column" gap={2} width={250}>
+          <Box display="flex" flexDirection="column" gap={2} width={400}>
             <Typography variant="h6" align="center">
-              <img src="https://taiwebs.com/upload/icons/mypal220-220.png" width="30%" />
+              <img src="cinbal-logo.png" width="20%"/>
+              <br></br>
                 Identifique-se
             </Typography>
 
