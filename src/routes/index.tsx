@@ -3,12 +3,13 @@ import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import React from "react";
 import { useDrawerContext } from "../shared/contexts";
+import { Visualizar } from '../pages/pessoas/Visualizar';
 import {
   Dashboard,
   DetalheDePessoas,
   ListagemDePessoas,
-  DetalheDeCidades,
-  ListagemDeCidades,
+  // DetalheDeCidades,
+  // ListagemDeCidades,
 } from "../pages";
 
 export const AppRoutes = () => {
@@ -21,11 +22,11 @@ export const AppRoutes = () => {
         path: "/pagina-inicial",
         label: "Dashboard",
       },
-      {
-        icon: "location_city",
-        path: "/cidades",
-        label: "O.S Aberta",
-      },
+      // {
+      //   icon: "location_city",
+      //   path: "/cidades",
+      //   label: "Cidades",
+      // },
       {
         icon: "people",
         path: "/pessoas",
@@ -40,9 +41,9 @@ export const AppRoutes = () => {
 
       <Route path="/pessoas" element={<ListagemDePessoas />} />
       <Route path="/pessoas/detalhe/:id" element={<DetalheDePessoas />} />
-
-      <Route path="/cidades" element={<ListagemDeCidades />} />
-      <Route path="/cidades/detalhe/:id" element={<DetalheDeCidades />} />
+      <Route path="/pessoas/visualizar/:id" element={<Visualizar />} />
+      {/* <Route path="/cidades" element={<ListagemDeCidades />} />
+      <Route path="/cidades/detalhe/:id" element={<DetalheDeCidades />} /> */}
 
       <Route path="*" element={<Navigate to="/pagina-inicial" />} />
     </Routes>

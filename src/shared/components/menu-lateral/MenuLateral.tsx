@@ -52,7 +52,8 @@ export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
             <Avatar
               sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
               // src="https://abeaco.org.br/wp-content/uploads/2022/07/cinbal.fw_.png"
-              src="cinbal-logo.png"
+              src="https://media.glassdoor.com/sqll/2491087/cinbal-squarelogo-1554782944622.png"
+
             />
           </Box>
 

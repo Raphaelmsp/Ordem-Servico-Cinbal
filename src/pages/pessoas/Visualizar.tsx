@@ -24,8 +24,8 @@ const formValidationSchema: yup.Schema<IFormData> = yup.object().shape({
   nomeCompleto: yup.string().required().min(3),
 });
 
-export const DetalheDePessoas: React.FC = () => {
-  const { formRef, save, saveAndClose, isSaveAndClose } = useVForm();
+export const Visualizar: React.FC = () => {
+  const { formRef, isSaveAndClose } = useVForm();
   const { id = "nova" } = useParams<"id">();
   const navigate = useNavigate();
 
@@ -72,7 +72,7 @@ export const DetalheDePessoas: React.FC = () => {
               if (isSaveAndClose()) {
                 navigate("/pessoas");
               } else {
-                navigate(`/pessoas/detalhe/${result}`);
+                navigate(`/pessoas/visualizar ${result}`);
               }
             }
           });
@@ -106,33 +106,15 @@ export const DetalheDePessoas: React.FC = () => {
       });
   };
 
-  const handleDelete = (id: number) => {
-    if (confirm("Realmente deseja apagar?")) {
-      PessoasService.deleteById(id).then((result) => {
-        if (result instanceof Error) {
-          alert(result.message);
-        } else {
-          alert("Registro apagado com sucesso!");
-          navigate("/pessoas");
-        }
-      });
-    }
-  };
 
   return (
     <LayoutBaseDePagina
       titulo={id === "nova" ? "Nova O.S" : nome}
       barraDeFerramentas={
         <FerramentasDeDetalhe
-          textoBotaoNovo="Nova"
-          mostrarBotaoSalvarEFechar
-          mostrarBotaoNovo={id !== "nova"}
-          mostrarBotaoApagar={id !== "nova"}
-          aoClicarEmSalvar={save}
-          aoClicarEmSalvarEFechar={saveAndClose}
+          // aoClicarEmSalvarEFechar={saveAndClose}
           aoClicarEmVoltar={() => navigate("/pessoas")}
-          aoClicarEmApagar={() => handleDelete(Number(id))}
-          aoClicarEmNovo={() => navigate("/pessoas/detalhe/nova")}
+          // aoClicarEmApagar={() => handleDelete(Number(id))}
         />
       }
     >
@@ -173,7 +155,7 @@ export const DetalheDePessoas: React.FC = () => {
                 <VTextField
                   fullWidth
                   name="nomeCompleto"
-                  disabled={isLoading}
+                  disabled
                   label="Prestadora de Serviço"
                   onChange={(e) => setNome(e.target.value)}
                 />
@@ -186,7 +168,7 @@ export const DetalheDePessoas: React.FC = () => {
                   fullWidth
                   name="email"
                   label="Email"
-                  disabled={isLoading}
+                  disabled
                 />
               </Grid>
             </Grid>
@@ -197,11 +179,11 @@ export const DetalheDePessoas: React.FC = () => {
                   fullWidth
                   name="Data"
                   label="Data"
-                  disabled={isLoading}
+                  disabled
                 />
               </Grid>
               <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
-                <AutoCompleteCidade isExternalLoading={isLoading} />
+                <AutoCompleteCidade isExternalLoading />
               </Grid>
             </Grid>
 
@@ -213,7 +195,7 @@ export const DetalheDePessoas: React.FC = () => {
                   rows={10}
                   name="Atividade a ser executada"
                   label="Atividade a ser executada"
-                  disabled={isLoading}
+                  disabled
                 />
               </Grid>
             </Grid>
@@ -226,7 +208,7 @@ export const DetalheDePessoas: React.FC = () => {
                   rows={6}
                   name="Executantes"
                   label="Executantes"
-                  disabled={isLoading}
+                  disabled
                 />
               </Grid>
             </Grid>
@@ -239,7 +221,7 @@ export const DetalheDePessoas: React.FC = () => {
                   rows={6}
                   name="Descrição detalhada do serviço executado"
                   label="Descrição detalhada do serviço executado"
-                  disabled={isLoading}
+                  disabled
                 />
               </Grid>
             </Grid>

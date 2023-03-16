@@ -10,7 +10,6 @@ import {
   List,
   ListItemButton,
   ListItemIcon,
-  ListItemText,
   TextField,
   Typography,
 } from "@mui/material";
@@ -36,7 +35,7 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
   const [email, setEmail] = useState("");
 
   const { toggleTheme } = useAppThemeContext();
-  const { logout } = useAuthContext();
+  // const { logout } = useAuthContext();
 
   const handleSubmit = () => {
     setIsLoading(true);
@@ -51,7 +50,7 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
       .catch((errors: yup.ValidationError) => {
         setIsLoading(false);
 
-        errors.inner?.forEach((error) => {
+        errors.inner.forEach((error) => {
           if (error.path === "email") {
             setEmailError(error.message);
           } else if (error.path === "password") {
@@ -64,79 +63,82 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
   if (isAuthenticated) return <>{children}</>;
 
   return (
-    <><Box>
-      <List component="nav">
-        <ListItemButton onClick={toggleTheme}>
-          <ListItemIcon>
-            <Icon>dark_mode</Icon>
-          </ListItemIcon>
-          <ListItemText primary="" />
-        </ListItemButton>
-        <ListItemButton onClick={logout}>
-          <ListItemIcon>
-          </ListItemIcon>
-        </ListItemButton>
-      </List>
-    </Box>
-    <Box
-      width="100vw"
-      height="100vh"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Card>
-        <CardContent>
-          <Box display="flex" flexDirection="column" gap={2} width={400}>
-            <Typography variant="h6" align="center">
-              <img src="cinbal-logo.png" width="20%"/>
-              <br></br>
+    <>
+      <Box
+        display="flex"
+        left="95%"
+        width="20px"
+        height="20px"
+        position="relative"
+      >
+        <List component="nav">
+          <ListItemButton onClick={toggleTheme}>
+            <ListItemIcon>
+              <Icon>dark_mode</Icon>
+            </ListItemIcon>
+          </ListItemButton>
+        </List>
+      </Box>
+      <Box width="100vw" height="100vh"display="flex" alignItems="center" justifyContent="center">
+        <Card>
+          <CardContent>
+            <Box display="flex" flexDirection="column" gap={5} width={400}>
+              <Typography variant="h6" align="center">
+                <img
+                  src="https://media.glassdoor.com/sqll/2491087/cinbal-squarelogo-1554782944622.png"
+                  width="10%"
+                />
+                <br></br>
                 Identifique-se
-            </Typography>
+              </Typography>
 
-            <TextField
-              fullWidth
-              type="email"
-              label="Email"
-              value={email}
-              disabled={isLoading}
-              error={!!emailError}
-              helperText={emailError}
-              onKeyDown={() => setEmailError("")}
-              onChange={(e) => setEmail(e.target.value)} />
+              <TextField
+                fullWidth
+                type="email"
+                label="Email"
+                value={email}
+                disabled={isLoading}
+                error={!!emailError}
+                helperText={emailError}
+                onKeyDown={() => setEmailError("")}
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
-            <TextField
-              fullWidth
-              label="Senha"
-              type="password"
-              value={password}
-              disabled={isLoading}
-              error={!!passwordError}
-              helperText={passwordError}
-              onKeyDown={() => setPasswordError("")}
-              onChange={(e) => setPassword(e.target.value)} />
-          </Box>
-        </CardContent>
-        <CardActions>
-          <Box width="100%" display="flex" justifyContent="center">
-            <Button
-              variant="contained"
-              disabled={isLoading}
-              onClick={handleSubmit}
-              endIcon={isLoading ? (
-                <CircularProgress
-                  variant="indeterminate"
-                  color="inherit"
-                  size={20} />
-              ) : undefined}
-            >
+              <TextField
+                fullWidth
+                label="Senha"
+                type="password"
+                value={password}
+                disabled={isLoading}
+                error={!!passwordError}
+                helperText={passwordError}
+                onKeyDown={() => setPasswordError("")}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Box>
+          </CardContent>
+          <CardActions>
+            <Box width="100%" display="flex" justifyContent="center">
+              <Button
+                variant="contained"
+                disabled={isLoading}
+                onClick={handleSubmit}
+                endIcon={
+                  isLoading ? (
+                    <CircularProgress
+                      variant="indeterminate"
+                      color="inherit"
+                      size={20}
+                    />
+                  ) : undefined
+                }
+              >
                 Entrar
-            </Button>
-
-
-          </Box>
-        </CardActions>
-      </Card>
-    </Box></>
+              </Button>
+            </Box>
+          </CardActions>
+        </Card>
+      </Box>
+    </>
   );
 };

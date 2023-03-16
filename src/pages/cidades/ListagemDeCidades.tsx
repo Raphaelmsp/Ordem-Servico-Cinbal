@@ -78,7 +78,7 @@ export const ListagemDeCidades: React.FC = () => {
 
   return (
     <LayoutBaseDePagina
-      titulo="O.S Aberta"
+      titulo="Cadastrar Cidade"
       barraDeFerramentas={
         <FerramentasDaListagem
           mostrarInputBusca
