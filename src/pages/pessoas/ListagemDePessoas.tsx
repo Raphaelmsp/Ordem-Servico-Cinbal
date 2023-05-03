@@ -24,6 +24,9 @@ import { LayoutBaseDePagina } from "../../shared/layouts";
 import { useDebounce } from "../../shared/hooks";
 import { Environment } from "../../shared/environment";
 
+
+import { MdPictureAsPdf } from "react-icons/md";
+
 export const ListagemDePessoas: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { debounce } = useDebounce();
@@ -63,7 +66,7 @@ export const ListagemDePessoas: React.FC = () => {
 
   return (
     <LayoutBaseDePagina
-      titulo="O.S Finalizada"
+      titulo="Ordem de Serviço"
       barraDeFerramentas={
         <FerramentasDaListagem
           mostrarInputBusca
@@ -87,18 +90,21 @@ export const ListagemDePessoas: React.FC = () => {
               <TableCell width={100}>Ações</TableCell>
               <TableCell>Prestadora de Serviço</TableCell>
               <TableCell>Email</TableCell>
+              <TableCell > Nº O.S </TableCell>
+
             </TableRow>
           </TableHead>
           <TableBody>
             {rows.map((row) => (
               <TableRow key={row.id}>
                 <TableCell>
+
                   <IconButton
                     size="small"
                     onClick={() => navigate(`/pessoas/visualizar/ ${row.id}`)}
                   >
                     <Icon>visibility</Icon>
-                    {/* <Icon>delete</Icon> */}
+
                   </IconButton>
                   <IconButton
                     size="small"
@@ -109,6 +115,8 @@ export const ListagemDePessoas: React.FC = () => {
                 </TableCell>
                 <TableCell>{row.nomeCompleto}</TableCell>
                 <TableCell>{row.email}</TableCell>
+                <TableCell> {row.id} </TableCell>
+
               </TableRow>
             ))}
           </TableBody>

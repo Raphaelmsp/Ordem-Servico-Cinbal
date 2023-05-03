@@ -11,10 +11,11 @@ type TAutoCompleteOption = {
   label: string;
 }
 
-interface IAutoCompleteCidadeProps {
+export interface IAutoCompleteCidadeProps {
   isExternalLoading?: boolean;
+  mostrarIsExternalLoading?: boolean;
 }
-export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({ isExternalLoading = false }) => {
+export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({ isExternalLoading = false, mostrarIsExternalLoading = true }) => {
   const { fieldName, registerField, defaultValue, error, clearError } = useField('cidadeId');
   const { debounce } = useDebounce();
 
@@ -69,18 +70,17 @@ export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({ isExter
       loadingText='Carregando...'
 
       disablePortal
-
       options={opcoes}
       loading={isLoading}
       disabled={isExternalLoading}
       value={autoCompleteSelectedOption}
       onInputChange={(_, newValue) => setBusca(newValue)}
       onChange={(_, newValue) => { setSelectedId(newValue?.id); setBusca(''); clearError(); }}
-      popupIcon={(isExternalLoading || isLoading) ? <CircularProgress size={28} /> : undefined}
+      popupIcon={(isLoading) ? <CircularProgress size={28} /> : undefined}
       renderInput={(params) => (
         <TextField
           {...params}
-
+          variant='standard'
           label="Cidade"
           error={!!error}
           helperText={error}

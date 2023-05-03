@@ -1,12 +1,15 @@
+import { ReactNode } from 'react';
 import { Environment } from '../../../environment';
 import { Api } from '../axios-config';
 
 
 export interface IListagemPessoa {
+  [x: string]: ReactNode;
   id: number;
   email: string;
   cidadeId: number;
   nomeCompleto: string;
+  
 }
 
 export interface IDetalhePessoa {
@@ -14,6 +17,7 @@ export interface IDetalhePessoa {
   email: string;
   cidadeId: number;
   nomeCompleto: string;
+  
 }
 
 type TPessoasComTotalCount = {

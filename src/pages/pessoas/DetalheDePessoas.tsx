@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Box, Grid, LinearProgress, Paper, Typography } from "@mui/material";
+import { Box, Grid, LinearProgress, Paper } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import * as yup from "yup";
 import React from "react";
@@ -136,7 +136,6 @@ export const DetalheDePessoas: React.FC = () => {
         />
       }
     >
-
       <VForm ref={formRef} onSubmit={handleSave}>
         <Box
           margin={1}
@@ -152,13 +151,14 @@ export const DetalheDePessoas: React.FC = () => {
               </Grid>
             )}
 
-            <Grid item>
+            {/* <Grid item>
               <Typography variant="h6">Geral</Typography>
-            </Grid>
+            </Grid> */}
 
             <Grid container item direction="row" spacing={75}>
               <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
                 <VTextField
+                  variant='standard'
                   fullWidth
                   name="Solicitante"
                   disabled
@@ -171,6 +171,7 @@ export const DetalheDePessoas: React.FC = () => {
             <Grid container item direction="row" spacing={2}>
               <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
                 <VTextField
+                  variant='standard'
                   fullWidth
                   name="nomeCompleto"
                   disabled={isLoading}
@@ -183,6 +184,7 @@ export const DetalheDePessoas: React.FC = () => {
             <Grid container item direction="row" spacing={2}>
               <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
                 <VTextField
+                  variant='standard'
                   fullWidth
                   name="email"
                   label="Email"
@@ -194,60 +196,75 @@ export const DetalheDePessoas: React.FC = () => {
             <Grid container item direction="row" spacing={2}>
               <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
                 <VTextField
+                  variant='standard'
                   fullWidth
                   name="Data"
                   label="Data"
                   disabled={isLoading}
                 />
               </Grid>
-              <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
-                <AutoCompleteCidade isExternalLoading={isLoading} />
+
+              <Grid container item direction="row" spacing={2}>
+                <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+                  <VTextField
+                    variant='standard'
+                    fullWidth
+                    name="Contato"
+                    label="Contato"
+                    disabled={isLoading}
+                  />
+                </Grid>
+
+                <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+                  <AutoCompleteCidade isExternalLoading={isLoading} />
+                </Grid>
+              </Grid>
+
+              <Grid container item direction="row" spacing={2}>
+                <Grid item xs={12} sm={12} md={6} lg={4} xl={10}>
+                  <VTextField
+                    variant='standard'
+                    fullWidth
+                    multiline
+                    rows={10}
+                    name="Atividade a ser executada"
+                    label="Atividade a ser executada"
+                    disabled={isLoading}
+                  />
+                </Grid>
+              </Grid>
+
+              <Grid container item direction="row" spacing={2}>
+                <Grid item xs={12} sm={12} md={6} lg={4} xl={10}>
+                  <VTextField
+                    variant='standard'
+                    fullWidth
+                    multiline
+                    rows={6}
+                    name="Executantes"
+                    label="Executantes"
+                    disabled={isLoading}
+                  />
+                </Grid>
+              </Grid>
+
+              <Grid container item direction="row" spacing={2}>
+                <Grid item xs={12} sm={12} md={6} lg={4} xl={10}>
+                  <VTextField
+                    variant='standard'
+                    fullWidth
+                    multiline
+                    rows={6}
+                    name="Descrição detalhada do serviço executado"
+                    label="Descrição detalhada do serviço executado"
+                    disabled={isLoading}
+                  />
+                </Grid>
               </Grid>
             </Grid>
-
-            <Grid container item direction="row" spacing={2}>
-              <Grid item xs={12} sm={12} md={6} lg={4} xl={10}>
-                <VTextField
-                  fullWidth
-                  multiline
-                  rows={10}
-                  name="Atividade a ser executada"
-                  label="Atividade a ser executada"
-                  disabled={isLoading}
-                />
-              </Grid>
-            </Grid>
-
-            <Grid container item direction="row" spacing={2}>
-              <Grid item xs={12} sm={12} md={6} lg={4} xl={10}>
-                <VTextField
-                  fullWidth
-                  multiline
-                  rows={6}
-                  name="Executantes"
-                  label="Executantes"
-                  disabled={isLoading}
-                />
-              </Grid>
-            </Grid>
-
-            <Grid container item direction="row" spacing={2}>
-              <Grid item xs={12} sm={12} md={6} lg={4} xl={10}>
-                <VTextField
-                  fullWidth
-                  multiline
-                  rows={6}
-                  name="Descrição detalhada do serviço executado"
-                  label="Descrição detalhada do serviço executado"
-                  disabled={isLoading}
-                />
-              </Grid>
-            </Grid>
-
           </Grid>
         </Box>
       </VForm>
     </LayoutBaseDePagina>
-
   );
 };
