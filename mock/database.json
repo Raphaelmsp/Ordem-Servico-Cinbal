@@ -49,6 +49,15 @@
       "Executantes": "Rafael",
       "Descrição detalhada do serviço executado": "Organizar os cabos no novo rack da produção",
       "id": 162
+    },
+    {
+      "nomeCompleto": "CASA DO TELEFONE",
+      "email": "casadotefone@gmail.com",
+      "cidadeId": 8,
+      "Atividade a ser executada": "PASSAR NOVO CABO PARA A LITO 3 E ACCESS POINT",
+      "Executantes": "ANDERSON E IRMÃO",
+      "Descrição detalhada do serviço executado": "PASSAGEM DE CABO DO RACK DO RH PARA A LITO3 E ACCESS POINT ",
+      "id": 163
     }
   ],
   "cidades": [

@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import React from "react";
 import { useDrawerContext } from "../shared/contexts";
-import { Visualizar } from '../pages/pessoas/Visualizar';
 import {
   Dashboard,
   DetalheDePessoas,
   ListagemDePessoas,
-
+  Pdf,
 } from "../pages";
+import { MenuLateral } from "../shared/components";
+
 
 
 export const AppRoutes = () => {
@@ -33,11 +34,16 @@ export const AppRoutes = () => {
 
   return (
     <Routes>
-      <Route path="/pagina-inicial" element={<Dashboard />} />
-      <Route path="/pessoas" element={<ListagemDePessoas />} />
-      <Route path="/pessoas/detalhe/:id" element={<DetalheDePessoas />} />
-      <Route path="/pessoas/visualizar/:id" element={<Visualizar />} />
+      <Route path="/" element={<MenuLateral />}>
+        <Route path="/pagina-inicial" element={<Dashboard />} />
+        <Route path="/pessoas" element={<ListagemDePessoas />} />
+        <Route path="/pessoas/detalhe/:id" element={<DetalheDePessoas />} />
+
+      </Route>
       <Route path="*" element={<Navigate to="/pagina-inicial" />} />
+      <Route path="/pdf/:id" element={<Pdf />} />
     </Routes>
+
+
   );
 };

@@ -70,7 +70,7 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
         flexDirection='column'
         gap={5}
         width={1000}
-        left="100px"
+        left="1px"
       >
         <div className="panel left-panel">
           <div className="content">

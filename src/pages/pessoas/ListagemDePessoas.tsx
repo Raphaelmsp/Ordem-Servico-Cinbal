@@ -101,7 +101,7 @@ export const ListagemDePessoas: React.FC = () => {
 
                   <IconButton
                     size="small"
-                    onClick={() => navigate(`/pessoas/visualizar/ ${row.id}`)}
+                    onClick={() => navigate(`/pdf/${row.id}`)}
                   >
                     <Icon>visibility</Icon>
 

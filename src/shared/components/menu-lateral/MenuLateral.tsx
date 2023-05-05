@@ -1,5 +1,5 @@
 import { Divider, Drawer, Icon, List, ListItemButton, ListItemIcon, ListItemText, useMediaQuery, useTheme } from '@mui/material';
-import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
+import { Outlet, useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 import { Box } from '@mui/system';
 import React from "react";
 import { useAppThemeContext, useAuthContext, useDrawerContext } from '../../contexts';
@@ -32,10 +32,8 @@ const ListItemLink: React.FC<IListItemLinkProps> = ({ to, icon, label, onClick }
   );
 };
 
-interface IMenuLateralProps {
-  children: React.ReactNode;
-}
-export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
+
+export const MenuLateral: React.FC = () => {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -103,7 +101,7 @@ export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
       </Drawer>
 
       <Box height="100vh" marginLeft={smDown ? 0 : theme.spacing(28)}>
-        {children}
+        {<Outlet />}
       </Box>
     </>
   );

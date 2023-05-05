@@ -1,17 +1,17 @@
+import React from "react";
 import { useEffect, useState } from "react";
-import { Box, Button, Drawer, Grid, Icon, LinearProgress, Paper, Tooltip, Typography, useTheme } from "@mui/material";
+import { Box, Grid, Icon, LinearProgress, Tooltip, useTheme } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import * as yup from "yup";
-import React from "react";
 import {
   IDetalhePessoa,
   PessoasService,
 } from "../../shared/services/api/pessoas/PessoasService";
 import { VTextField, useVForm, IVFormErrors, VForm } from "../../shared/forms";
-import { AutoCompleteCidade, IAutoCompleteCidadeProps } from "./components/AutoCompleteCidade";
-import { FerramentasDeDetalhe } from "../../shared/ferramenta-de-detalhe-bt/FerramentaDeDetalheBT";
 import { LayoutBaseDePagina } from "../../shared/layoutsVZ";
 import { IconButton } from '@mui/material';
+import { AutoCompleteCidade, IAutoCompleteCidadeProps } from "./components/AutoCompleteCidade";
+
 
 
 interface IFormData {
@@ -20,13 +20,16 @@ interface IFormData {
   nomeCompleto: string;
 }
 
+
 const formValidationSchema: yup.Schema<IFormData> = yup.object().shape({
   cidadeId: yup.number().required(),
   email: yup.string().required().email(),
   nomeCompleto: yup.string().required().min(3),
 });
 
-export const Visualizar: React.FC<IAutoCompleteCidadeProps> = () => {
+
+
+export const Pdf: React.FC<IAutoCompleteCidadeProps> = () => {
   const { formRef, isSaveAndClose } = useVForm();
   const { id = "nova" } = useParams<"id">();
   const navigate = useNavigate();
@@ -35,6 +38,11 @@ export const Visualizar: React.FC<IAutoCompleteCidadeProps> = () => {
   const [nome, setNome] = useState("");
 
   const theme = useTheme();
+
+  const imprimir = () => {
+    window.print();
+  };
+
 
   useEffect(() => {
     if (id !== "nova") {
@@ -113,27 +121,20 @@ export const Visualizar: React.FC<IAutoCompleteCidadeProps> = () => {
 
   return (
 
-    <LayoutBaseDePagina
-      titulo={id === "none" ? "none" : ""}
-      barraDeFerramentas={
-        <FerramentasDeDetalhe
-          // aoClicarEmSalvarEFechar={saveAndClose}
-          aoClicarEmVoltar={() => navigate("/pessoas")}
-        // aoClicarEmApagar={() => handleDelete(Number(id))}
-        />
-      }
-    >
 
-      <VForm ref={formRef} onSubmit={handleSave}>
+    <LayoutBaseDePagina barraDeFerramentas={""} titulo={""} >
+      <VForm ref={formRef} onSubmit={handleSave} style={{ display: "flex", alignItems: "center" }}>
 
         <Box
-          margin={1}
+          marginX="auto"
           display="flex"
+          flex="1"
           flexDirection="column"
-          component={Paper}
-          variant="outlined"
+          justifyContent="center"
+          width="auto"
         >
-          <Grid container direction="column" padding={2} spacing={2}>
+
+          <Grid container direction="column" padding={3} spacing={1}>
             {isLoading && (
               <Grid item>
                 <LinearProgress variant="indeterminate" />
@@ -142,7 +143,6 @@ export const Visualizar: React.FC<IAutoCompleteCidadeProps> = () => {
 
             <Box display="flex" justifyContent="space-between">
 
-
               <Tooltip title="Voltar" placement="top" arrow>
                 <IconButton onClick={() => navigate('/pessoas')}>
 
@@ -150,13 +150,30 @@ export const Visualizar: React.FC<IAutoCompleteCidadeProps> = () => {
                 </IconButton>
               </Tooltip>
 
-
               <Tooltip title="imprimir" placement="top" arrow>
-                <IconButton onClick={() => window.print()}>
+
+                <IconButton onClick={imprimir} >
                   <Icon>print</Icon>
+
                 </IconButton>
 
               </Tooltip>
+
+            </Box>
+
+            <Box>
+              <div className="panel left-panel " style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
+                <img
+                  src={"https://cinbal-apps.vercel.app/assets/logo2-full-cbb1a1b4.png"}
+                  className="image"
+                  height={38}
+                  width={100}
+                  alt=""
+                />
+                <div className="content">
+                  <h3>Ordem de Serviço</h3>
+                </div>
+              </div>
 
             </Box>
 
@@ -170,7 +187,6 @@ export const Visualizar: React.FC<IAutoCompleteCidadeProps> = () => {
                   label="Cinbal Incoflandres"
                   onChange={(e) => setNome(e.target.value)}
                 />
-
               </Grid>
             </Grid>
 
@@ -221,7 +237,7 @@ export const Visualizar: React.FC<IAutoCompleteCidadeProps> = () => {
                   variant="standard"
                   fullWidth
                   multiline
-                  rows={10}
+                  rows={12}
                   name="Atividade a ser executada"
                   label="Atividade a ser executada"
                   disabled
@@ -235,7 +251,7 @@ export const Visualizar: React.FC<IAutoCompleteCidadeProps> = () => {
                   variant="standard"
                   fullWidth
                   multiline
-                  rows={6}
+                  rows={4}
                   name="Executantes"
                   label="Executantes"
                   disabled
@@ -255,16 +271,12 @@ export const Visualizar: React.FC<IAutoCompleteCidadeProps> = () => {
                   disabled
                 />
               </Grid>
-            </Grid>
 
+            </Grid>
           </Grid>
         </Box>
-
       </VForm>
-
     </LayoutBaseDePagina>
 
   );
 };
-
-
