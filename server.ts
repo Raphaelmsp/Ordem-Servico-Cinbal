@@ -2,6 +2,10 @@ import express from 'express';
 
 const app = express();
 
-app.listen(3000, '192.168.0.220', () => {
-console.log('Server running on http://192.168.0.220:3000');
+app.get('/', (req, res) => {
+res.send('Hello World!');
+});
+
+app.listen(3000, '0.0.0.0', () => {
+console.log('App listening on http://10.152.8.45:3000');
 });
