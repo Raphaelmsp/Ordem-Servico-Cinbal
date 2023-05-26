@@ -38,10 +38,10 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
     setIsLoading(true);
 
     loginSchema
-      .validate({ email, password }, { abortEarly: false })
+      .validate({ email, password }, { abortEarly: true })
       .then((dadosValidados) => {
         login(dadosValidados.email, dadosValidados.password).then(() => {
-          setIsLoading(false);
+          setIsLoading(true);
         });
       })
       .catch((errors: yup.ValidationError) => {

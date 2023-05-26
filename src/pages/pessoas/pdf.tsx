@@ -35,8 +35,10 @@ export const Pdf: React.FC<IAutoCompleteCidadeProps> = () => {
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [nome, setNome] = useState("");
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const theme = useTheme();
 
   const imprimir = () => {
@@ -135,6 +137,7 @@ export const Pdf: React.FC<IAutoCompleteCidadeProps> = () => {
         >
 
           <Grid container direction="column" padding={3} spacing={1}>
+
             {isLoading && (
               <Grid item>
                 <LinearProgress variant="indeterminate" />
@@ -186,6 +189,7 @@ export const Pdf: React.FC<IAutoCompleteCidadeProps> = () => {
                   disabled
                   label="Cinbal Incoflandres"
                   onChange={(e) => setNome(e.target.value)}
+                  
                 />
               </Grid>
             </Grid>
@@ -211,6 +215,7 @@ export const Pdf: React.FC<IAutoCompleteCidadeProps> = () => {
                   name="email"
                   label="Email"
                   disabled
+
                 />
               </Grid>
             </Grid>
@@ -223,6 +228,7 @@ export const Pdf: React.FC<IAutoCompleteCidadeProps> = () => {
                   name="Data"
                   label="Data"
                   disabled
+
                 />
               </Grid>
 
@@ -241,6 +247,7 @@ export const Pdf: React.FC<IAutoCompleteCidadeProps> = () => {
                   name="Atividade a ser executada"
                   label="Atividade a ser executada"
                   disabled
+
                 />
               </Grid>
             </Grid>
@@ -255,6 +262,7 @@ export const Pdf: React.FC<IAutoCompleteCidadeProps> = () => {
                   name="Executantes"
                   label="Executantes"
                   disabled
+
                 />
               </Grid>
             </Grid>
@@ -269,6 +277,7 @@ export const Pdf: React.FC<IAutoCompleteCidadeProps> = () => {
                   name="Descrição detalhada do serviço executado"
                   label="Descrição detalhada do serviço executado"
                   disabled
+
                 />
               </Grid>
 

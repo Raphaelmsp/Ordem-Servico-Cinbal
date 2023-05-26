@@ -1,4 +1,4 @@
-import { Box, Button, Icon, Paper, TextField, useTheme } from "@mui/material";
+import { Box, Button, Icon, TextField, useTheme } from "@mui/material";
 import React from "react";
 import { Environment } from "../../environment";
 
@@ -29,8 +29,7 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({
       display="flex"
       alignItems="center"
       height={theme.spacing(5)}
-      component={Paper}
-      variant="outlined"
+
     >
       {mostrarInputBusca && (
         <TextField

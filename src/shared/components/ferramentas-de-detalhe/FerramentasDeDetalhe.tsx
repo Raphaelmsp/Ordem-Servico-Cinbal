@@ -5,7 +5,7 @@ import {
   Button,
   Divider,
   Icon,
-  Paper,
+
   Skeleton,
   Theme,
   Typography,
@@ -68,7 +68,7 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
       display="flex"
       alignItems="center"
       height={theme.spacing(5)}
-      component={Paper}
+
     >
       {mostrarBotaoSalvar && !mostrarBotaoSalvarCarregando && (
         <Button

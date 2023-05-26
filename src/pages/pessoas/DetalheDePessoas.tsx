@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Box, Grid, LinearProgress, Paper } from "@mui/material";
+import { Box, Grid, LinearProgress } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import * as yup from "yup";
 import React from "react";
@@ -141,8 +141,7 @@ export const DetalheDePessoas: React.FC = () => {
           margin={1}
           display="flex"
           flexDirection="column"
-          component={Paper}
-          variant="outlined"
+
         >
           <Grid container direction="column" padding={2} spacing={2}>
             {isLoading && (
@@ -150,10 +149,6 @@ export const DetalheDePessoas: React.FC = () => {
                 <LinearProgress variant="indeterminate" />
               </Grid>
             )}
-
-            {/* <Grid item>
-              <Typography variant="h6">Geral</Typography>
-            </Grid> */}
 
             <Grid container item direction="row" spacing={75}>
               <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
@@ -189,6 +184,7 @@ export const DetalheDePessoas: React.FC = () => {
                   name="email"
                   label="Email"
                   disabled={isLoading}
+                  onChange={(e) => setNome(e.target.value)}
                 />
               </Grid>
             </Grid>
@@ -201,6 +197,7 @@ export const DetalheDePessoas: React.FC = () => {
                   name="Data"
                   label="Data"
                   disabled={isLoading}
+                  onChange={(e) => setNome(e.target.value)}
                 />
               </Grid>
 
@@ -212,6 +209,7 @@ export const DetalheDePessoas: React.FC = () => {
                     name="Contato"
                     label="Contato"
                     disabled={isLoading}
+                    onChange={(e) => setNome(e.target.value)}
                   />
                 </Grid>
 

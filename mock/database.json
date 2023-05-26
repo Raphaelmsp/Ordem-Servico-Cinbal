@@ -59,6 +59,16 @@
       "Atividade a ser executada": "PASSAR NOVO CABO PARA A LITO 3 E ACCESS POINT",
       "Executantes": "ANDERSON E IRMÃO",
       "Descrição detalhada do serviço executado": "PASSAGEM DE CABO DO RACK DO RH PARA A LITO3 E ACCESS POINT "
+    },
+    {
+      "nomeCompleto": "CASA DO TELEFONE",
+      "email": "casadotelefone@gmail.com",
+      "Data": "08/05/2023",
+      "cidadeId": 8,
+      "Atividade a ser executada": "ORGANIZAR OS CABOS DO RACK DA SALA DO RH",
+      "Executantes": "RAFAEL",
+      "Descrição detalhada do serviço executado": "ORGANIZAÇÃO DO PATCH COARD NO RACK ",
+      "id": 164
     }
   ],
   "cidades": [
