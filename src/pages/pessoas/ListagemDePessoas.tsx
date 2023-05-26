@@ -4,7 +4,6 @@ import {
   IconButton,
   LinearProgress,
   Pagination,
-  Paper,
   Table,
   TableBody,
   TableCell,
@@ -23,9 +22,6 @@ import { FerramentasDaListagem } from "../../shared/components";
 import { LayoutBaseDePagina } from "../../shared/layouts";
 import { useDebounce } from "../../shared/hooks";
 import { Environment } from "../../shared/environment";
-
-
-import { MdPictureAsPdf } from "react-icons/md";
 
 export const ListagemDePessoas: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -80,14 +76,13 @@ export const ListagemDePessoas: React.FC = () => {
       }
     >
       <TableContainer
-        component={Paper}
-        variant="outlined"
+
         sx={{ m: 1, width: "auto" }}
       >
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell width={100}>Ações</TableCell>
+              <TableCell width={70}>Ações</TableCell>
               <TableCell>Prestadora de Serviço</TableCell>
               <TableCell>Email</TableCell>
               <TableCell > Nº O.S </TableCell>
