@@ -11,6 +11,7 @@ import {
   TableFooter,
   TableHead,
   TableRow,
+  Tooltip,
 } from "@mui/material";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import React from "react";
@@ -76,16 +77,15 @@ export const ListagemDePessoas: React.FC = () => {
       }
     >
       <TableContainer
-
-        sx={{ m: 1, width: "auto" }}
+      
       >
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell width={70}>Ações</TableCell>
-              <TableCell>Prestadora de Serviço</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell > Nº O.S </TableCell>
+              <TableCell width={10}>Ações</TableCell>
+              <TableCell width={10}>Prestadora de Serviço</TableCell>
+              <TableCell width={10}>Email</TableCell>
+              <TableCell width={100}> Nº O.S </TableCell>
 
             </TableRow>
           </TableHead>
@@ -93,20 +93,24 @@ export const ListagemDePessoas: React.FC = () => {
             {rows.map((row) => (
               <TableRow key={row.id}>
                 <TableCell>
+                  <Tooltip title="Visualizar" placement="top" arrow>
+                    <IconButton
+                      size="small"
+                      onClick={() => navigate(`/pdf/${row.id}`)}
+                    >
+                      <Icon>visibility</Icon>
+                    
+                    </IconButton>
+                  </Tooltip>
 
-                  <IconButton
-                    size="small"
-                    onClick={() => navigate(`/pdf/${row.id}`)}
-                  >
-                    <Icon>visibility</Icon>
-
-                  </IconButton>
-                  <IconButton
-                    size="small"
-                    onClick={() => navigate(`/pessoas/detalhe/${row.id}`)}
-                  >
-                    <Icon>editar</Icon>
-                  </IconButton>
+                  <Tooltip title="Editar" placement="top" arrow>
+                    <IconButton
+                      size="small"
+                      onClick={() => navigate(`/pessoas/detalhe/${row.id}`)}
+                    >
+                      <Icon>editar</Icon>
+                    </IconButton>
+                  </Tooltip>
                 </TableCell>
                 <TableCell>{row.nomeCompleto}</TableCell>
                 <TableCell>{row.email}</TableCell>

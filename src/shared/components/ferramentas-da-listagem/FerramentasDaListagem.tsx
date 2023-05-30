@@ -1,6 +1,7 @@
-import { Box, Button, Icon, TextField, useTheme } from "@mui/material";
+import { Box, Button, Icon, List, ListItemButton, ListItemIcon, TextField, useTheme } from "@mui/material";
 import React from "react";
 import { Environment } from "../../environment";
+import { useAppThemeContext } from "../../contexts";
 
 interface IFerramentasDaListagemProps {
   textoDaBusca?: string;
@@ -19,13 +20,13 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({
   mostrarBotaoNovo = true,
 }) => {
   const theme = useTheme();
-
+  const { toggleTheme } = useAppThemeContext();
   return (
     <Box
       gap={1}
       marginX={1}
       padding={1}
-      paddingX={2}
+      paddingX={4}
       display="flex"
       alignItems="center"
       height={theme.spacing(5)}
@@ -39,7 +40,13 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({
           onChange={(e) => aoMudarTextoDeBusca?.(e.target.value)}
         />
       )}
-
+      <List component="nav">
+        <ListItemButton onClick={toggleTheme}>
+          <ListItemIcon>
+            <Icon>dark_mode</Icon>
+          </ListItemIcon>
+        </ListItemButton>
+      </List>
       <Box flex={1} display="flex" justifyContent="end">
         {mostrarBotaoNovo && (
           <Button

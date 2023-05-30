@@ -1,11 +1,10 @@
 import { ReactNode } from 'react';
 import {
-  Icon,
-  IconButton,
+
   Theme,
   Typography,
   useMediaQuery,
-  useTheme,
+
 } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
@@ -23,9 +22,8 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaVZProps> = ({
 }) => {
   const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
   const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
-  const theme = useTheme();
 
-  const { toggleDrawerOpen } = useDrawerContext();
+  useDrawerContext();
 
   return (
     <Box height='130%' display='flex' flexDirection='column' gap={1}>
@@ -49,7 +47,7 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaVZProps> = ({
 
 
 
-      <Box flex={1} overflow='auto'>
+      <Box flex={1} overflow='hidden'>
         {children}
       </Box>
     </Box>

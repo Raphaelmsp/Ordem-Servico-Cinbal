@@ -2,7 +2,7 @@ import { Divider, Drawer, Icon, List, ListItemButton, ListItemIcon, ListItemText
 import { Outlet, useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 import { Box } from '@mui/system';
 import React from "react";
-import { useAppThemeContext, useAuthContext, useDrawerContext } from '../../contexts';
+import { useAuthContext, useDrawerContext } from '../../contexts';
 
 interface IListItemLinkProps {
   to: string;
@@ -38,36 +38,30 @@ export const MenuLateral: React.FC = () => {
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
   const { isDrawerOpen, drawerOptions, toggleDrawerOpen } = useDrawerContext();
-  const { toggleTheme } = useAppThemeContext();
+  
   const { logout } = useAuthContext();
 
   return (
     <>
 
       <Drawer open={isDrawerOpen} variant={smDown ? 'temporary' : 'permanent'} onClose={toggleDrawerOpen}>
-        <Box width={theme.spacing(28)} height="100%" display="flex" flexDirection="column">
+        <Box width={theme.spacing(20)} height="100%" display="flex" flexDirection="column">
 
           <Box
             margin={3}
             padding={2}
-            height={theme.spacing(5)}
+            height={theme.spacing(2)}
             display={'flex'}
             alignItems={'start'}
             justifyContent={'top'}>
             <img
               src="https://cinbal-apps.vercel.app/assets/logo2-full-cbb1a1b4.png"
               alt="Cinbal Help Desk Logo"
-              height={57}
-              width={130}
+              height={40}
+              width={80}
             />
 
-            <List component="nav">
-              <ListItemButton onClick={toggleTheme}>
-                <ListItemIcon>
-                  <Icon>dark_mode</Icon>
-                </ListItemIcon>
-              </ListItemButton>
-            </List>
+
 
           </Box>
 
@@ -100,7 +94,7 @@ export const MenuLateral: React.FC = () => {
         </Box>
       </Drawer>
 
-      <Box height="100vh" marginLeft={smDown ? 0 : theme.spacing(28)}>
+      <Box height="100vh" marginLeft={smDown ? 0 : theme.spacing(20)}>
         {<Outlet />}
       </Box>
     </>

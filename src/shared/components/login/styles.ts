@@ -99,7 +99,7 @@ export const AppContainer = styled.div`
     }
   }
   @media (max-height: 600px) {
-    overflow: auto;
+    overflow: hidden;
     height: 50px;
     .ouvidoria {
       display: none;
