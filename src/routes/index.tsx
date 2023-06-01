@@ -18,11 +18,11 @@ export const AppRoutes = () => {
 
   useEffect(() => {
     setDrawerOptions([
-      {
-        icon: "home",
-        path: "/pagina-inicial",
-        label: "Dashboard",
-      },
+      // {
+      //   icon: "home",
+      //   path: "/pagina-inicial",
+      //   label: "Dashboard",
+      // },
 
       {
         icon: "people",

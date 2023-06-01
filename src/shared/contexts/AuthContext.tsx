@@ -20,9 +20,10 @@ export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
 
   useEffect(() => {
     const accessToken = localStorage.getItem(LOCAL_STORAGE_KEY__ACCESS_TOKEN);
+  
 
     if (accessToken) {
-      setAccessToken(JSON.parse(accessToken));
+      // setAccessToken(JSON.parse(accessToken));
     } else {
       setAccessToken(undefined);
     }

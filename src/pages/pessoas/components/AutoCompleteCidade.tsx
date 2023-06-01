@@ -3,7 +3,6 @@ import { Autocomplete, CircularProgress, TextField } from '@mui/material';
 import React from "react";
 import { CidadesService } from '../../../shared/services/api/cidades/CidadesService';
 import { useDebounce } from '../../../shared/hooks';
-import { Label } from '@mui/icons-material';
 import { useField } from '@unform/core';
 
 
@@ -16,7 +15,7 @@ export interface IAutoCompleteCidadeProps {
   isExternalLoading?: boolean;
   mostrarIsExternalLoading?: boolean;
 }
-export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({ isExternalLoading = false, mostrarIsExternalLoading = true }) => {
+export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({ isExternalLoading = false }) => {
   const { fieldName, registerField, defaultValue, error, clearError } = useField('cidadeId');
   const { debounce } = useDebounce();
 

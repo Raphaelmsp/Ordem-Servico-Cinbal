@@ -5,6 +5,7 @@
       "nomeCompleto": "CASA DO TELEFONE  (status verificação)",
       "email": "casadotefelone@gmail.com",
       "Data": "21/03/2023",
+      "Contato": "(24)24439900",
       "cidadeId": 8,
       "Atividade a ser executada": "Atendimento sobre demanda (verificação de 15 câmeras)\nCâmeras sem imagem no DVR : SD G8, Of.Tambor,  entrada diretoria, antiga seleção,  embalagem, fundo linha de corte 5.\nCaçamba e fardos, porta alm. int, G0 fundos. \nAjustar imagem da cam5 e cam 10 (DVR3)\nG0 reposicionar p/G1.\nArmário celular (falha na imagem e reposicionar marketing reposicionar p/porta do DP.\nAuditório  e relógio de ponto - nova instalação \nrefeitório - verificar imagem noturna\n",
       "Executantes": "Anderson",
@@ -28,7 +29,7 @@
       "cidadeId": 8,
       "Atividade a ser executada": "Montagem do rack da diretoria",
       "Executantes": "Rafael\n",
-      "Descrição detalhada do serviço executado": "Montagem do rack da diretoria"
+      "Descrição detalhada do serviço executado": "Montagem do rack da diretoria\n"
     },
     {
       "nomeCompleto": "CASA DO TELEFONE",
@@ -59,6 +60,7 @@
       "Atividade a ser executada": "PASSAR NOVO CABO PARA A LITO 3 E ACCESS POINT",
       "Executantes": "ANDERSON E IRMÃO",
       "Descrição detalhada do serviço executado": "PASSAGEM DE CABO DO RACK DO RH PARA A LITO3 E ACCESS POINT "
+      
     },
     {
       "nomeCompleto": "CASA DO TELEFONE",

@@ -1,4 +1,4 @@
-import { Box, Button, Icon, List, ListItemButton, ListItemIcon, TextField, useTheme } from "@mui/material";
+import { Box, Button, Icon, List, ListItemButton, ListItemIcon, TextField, Tooltip, useTheme } from "@mui/material";
 import React from "react";
 import { Environment } from "../../environment";
 import { useAppThemeContext } from "../../contexts";
@@ -40,13 +40,15 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({
           onChange={(e) => aoMudarTextoDeBusca?.(e.target.value)}
         />
       )}
-      <List component="nav">
-        <ListItemButton onClick={toggleTheme}>
-          <ListItemIcon>
-            <Icon>dark_mode</Icon>
-          </ListItemIcon>
-        </ListItemButton>
-      </List>
+      <Tooltip title="Tema Escuro" placement="top" arrow>
+        <List component="nav">
+          <ListItemButton onClick={toggleTheme}>
+            <ListItemIcon>
+              <Icon>dark_mode</Icon>
+            </ListItemIcon>
+          </ListItemButton>
+        </List>
+      </Tooltip>
       <Box flex={1} display="flex" justifyContent="end">
         {mostrarBotaoNovo && (
           <Button

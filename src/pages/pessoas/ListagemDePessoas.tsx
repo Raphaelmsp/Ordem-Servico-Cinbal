@@ -82,10 +82,10 @@ export const ListagemDePessoas: React.FC = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell width={10}>Ações</TableCell>
-              <TableCell width={10}>Prestadora de Serviço</TableCell>
-              <TableCell width={10}>Email</TableCell>
-              <TableCell width={100}> Nº O.S </TableCell>
+              <TableCell width="8%">Ações</TableCell>
+              <TableCell width="30%">Prestadora de Serviço</TableCell>
+              <TableCell width="30%">Email</TableCell>
+              <TableCell> Nº O.S </TableCell>
 
             </TableRow>
           </TableHead>
