@@ -16,12 +16,16 @@ interface IFormData {
   email: string;
   cidadeId: number;
   nomeCompleto: string;
+  descrição: string;
+  dataI: string;
 }
 
 const formValidationSchema: yup.Schema<IFormData> = yup.object().shape({
   cidadeId: yup.number().required(),
   email: yup.string().required().email(),
   nomeCompleto: yup.string().required().min(3),
+  descrição: yup.string().required().min(10),
+  dataI: yup.string().required().min(10),
 });
 
 export const DetalheDePessoas: React.FC = () => {
@@ -47,11 +51,15 @@ export const DetalheDePessoas: React.FC = () => {
           formRef.current?.setData(result);
         }
       });
+
+      
+
     } else {
       formRef.current?.setData({
         email: "",
         nomeCompleto: "",
         cidadeId: undefined,
+        descrição: "",
       });
     }
   }, [id]);
@@ -149,44 +157,56 @@ export const DetalheDePessoas: React.FC = () => {
                 <LinearProgress variant="indeterminate" />
               </Grid>
             )}
-
-            <Grid container item direction="row" spacing={75}>
-              <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
-                <VTextField
-                  variant='standard'
-                  fullWidth
-                  name="Solicitante"
-                  disabled
-                  label="Cinbal Incoflandres"
-                  onChange={(e) => setNome(e.target.value)}
-                />
-              </Grid>
+          </Grid> 
+          <Grid container item direction="row" spacing={75}>
+            <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
+              <VTextField
+                variant='standard'
+                fullWidth
+                name="Solicitante"
+                disabled
+                label="Cinbal Incoflandres"
+                onChange={(e) => setNome(e.target.value)}
+              />
             </Grid>
+          </Grid>
 
-            <Grid container item direction="row" spacing={2}>
-              <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
-                <VTextField
-                  variant='standard'
-                  fullWidth
-                  name="nomeCompleto"
-                  disabled={isLoading}
-                  label="Prestadora de Serviço"
-                  onChange={(e) => setNome(e.target.value)}
-                />
-              </Grid>
+          <Grid container item direction="row" spacing={2}>
+            <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
+              <VTextField
+                variant='standard'
+                fullWidth
+                name="nomeCompleto"
+                disabled={isLoading}
+                label="Prestadora de Serviço"
+                onChange={(e) => setNome(e.target.value)}
+              />
             </Grid>
+          </Grid>
 
-            <Grid container item direction="row" spacing={2}>
-              <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
-                <VTextField
-                  variant='standard'
-                  fullWidth
-                  name="email"
-                  label="Email"
-                  disabled={isLoading}
-                  onChange={(e) => setNome(e.target.value)}
-                />
-              </Grid>
+          <Grid container item direction="row" spacing={2}>
+            <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
+              <VTextField
+                variant='standard'
+                fullWidth
+                name="email"
+                label="Email"
+                disabled={isLoading}
+                onChange={(e) => setNome(e.target.value)}
+              />
+            </Grid>
+          </Grid>
+
+          <Grid container item direction="row" spacing={2}>
+            <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+              <VTextField
+                variant='standard'
+                fullWidth
+                name="Data Início"
+                label="Data Início"
+                disabled={isLoading}
+                onChange={(e) => setNome(e.target.value)}
+              />
             </Grid>
 
             <Grid container item direction="row" spacing={2}>
@@ -194,8 +214,8 @@ export const DetalheDePessoas: React.FC = () => {
                 <VTextField
                   variant='standard'
                   fullWidth
-                  name="Data"
-                  label="Data"
+                  name="Data Fim"
+                  label="Data Fim"
                   disabled={isLoading}
                   onChange={(e) => setNome(e.target.value)}
                 />

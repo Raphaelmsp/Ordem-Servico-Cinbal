@@ -83,9 +83,13 @@ export const ListagemDePessoas: React.FC = () => {
           <TableHead>
             <TableRow>
               <TableCell width="8%">Ações</TableCell>
-              <TableCell width="30%">Prestadora de Serviço</TableCell>
-              <TableCell width="30%">Email</TableCell>
-              <TableCell> Nº O.S </TableCell>
+              <TableCell width="5%"> Nº O.S </TableCell>
+              <TableCell width="15%">Prestadora de Serviço</TableCell>
+              <TableCell width="15%">Email</TableCell>
+              <TableCell width="30%">Descrição</TableCell>
+              <TableCell width="10%">Data Inicial</TableCell>
+              <TableCell width="35%">Data Final</TableCell>
+              
 
             </TableRow>
           </TableHead>
@@ -112,9 +116,13 @@ export const ListagemDePessoas: React.FC = () => {
                     </IconButton>
                   </Tooltip>
                 </TableCell>
+                <TableCell> {row.id} </TableCell>
                 <TableCell>{row.nomeCompleto}</TableCell>
                 <TableCell>{row.email}</TableCell>
-                <TableCell> {row.id} </TableCell>
+                <TableCell>{row.descrição}</TableCell>
+                <TableCell>{row.dataI}</TableCell>
+                <TableCell>{row.dataF}</TableCell>
+                
 
               </TableRow>
             ))}

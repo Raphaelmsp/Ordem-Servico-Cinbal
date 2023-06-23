@@ -9,7 +9,8 @@ export interface IListagemPessoa {
   email: string;
   cidadeId: number;
   nomeCompleto: string;
-  
+  descrição: string;
+  dataI: string;
 }
 
 export interface IDetalhePessoa {
@@ -17,7 +18,8 @@ export interface IDetalhePessoa {
   email: string;
   cidadeId: number;
   nomeCompleto: string;
-  
+  descrição: string;
+  dataI: string;
 }
 
 type TPessoasComTotalCount = {

@@ -18,6 +18,9 @@ interface IFormData {
   email: string;
   cidadeId: number;
   nomeCompleto: string;
+  descrição: string;
+  dataI: string;
+  dataF: string;
 }
 
 
@@ -25,6 +28,9 @@ const formValidationSchema: yup.Schema<IFormData> = yup.object().shape({
   cidadeId: yup.number().required(),
   email: yup.string().required().email(),
   nomeCompleto: yup.string().required().min(3),
+  descrição: yup.string().required().min(10),
+  dataI: yup.string().required().min(10),
+  dataF: yup.string().required().min(10),
 });
 
 
@@ -66,6 +72,8 @@ export const Pdf: React.FC<IAutoCompleteCidadeProps> = () => {
         email: "",
         nomeCompleto: "",
         cidadeId: undefined,
+        descrição: "",
+        dataI: "",
       });
     }
   }, [id]);
@@ -135,7 +143,7 @@ export const Pdf: React.FC<IAutoCompleteCidadeProps> = () => {
           justifyContent="center"
           width="auto"
         >
-
+        
           <Grid container direction="column" padding={3} spacing={1}>
 
             {isLoading && (
@@ -143,81 +151,93 @@ export const Pdf: React.FC<IAutoCompleteCidadeProps> = () => {
                 <LinearProgress variant="indeterminate" />
               </Grid>
             )}
+          </Grid>
+          <Box display="flex" justifyContent="space-between">
 
-            <Box display="flex" justifyContent="space-between">
+            <Tooltip title="Voltar" placement="top" arrow>
+              <IconButton onClick={() => navigate('/pessoas')}>
 
-              <Tooltip title="Voltar" placement="top" arrow>
-                <IconButton onClick={() => navigate('/pessoas')}>
+                <Icon>arrow_back</Icon>
+              </IconButton>
+            </Tooltip>
 
-                  <Icon>arrow_back</Icon>
-                </IconButton>
-              </Tooltip>
+            <Tooltip title="imprimir" placement="top" arrow>
 
-              <Tooltip title="imprimir" placement="top" arrow>
+              <IconButton onClick={imprimir} >
+                <Icon>print</Icon>
 
-                <IconButton onClick={imprimir} >
-                  <Icon>print</Icon>
+              </IconButton>
 
-                </IconButton>
+            </Tooltip>
 
-              </Tooltip>
+          </Box>
 
-            </Box>
-
-            <Box>
-              <div className="panel left-panel " style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
-                <img
-                  src={"https://cinbal-apps.vercel.app/assets/logo2-full-cbb1a1b4.png"}
-                  className="image"
-                  height={38}
-                  width={100}
-                  alt=""
-                />
-                <div className="content">
-                  <h3>Ordem de Serviço</h3>
-                </div>
+          <Box>
+            <div className="panel left-panel " style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
+              <img
+                src={"https://cinbal-apps.vercel.app/assets/logo2-full-cbb1a1b4.png"}
+                className="image"
+                height={38}
+                width={100}
+                alt=""
+              />
+              <div className="content">
+                <h3>Ordem de Serviço</h3>
               </div>
+            </div>
 
-            </Box>
+          </Box>
 
-            <Grid container item direction="row" spacing={75}>
-              <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
-                <VTextField
-                  variant="standard"
-                  fullWidth
-                  name="Solicitante"
-                  disabled
-                  label="Cinbal Incoflandres"
-                  onChange={(e) => setNome(e.target.value)}
+          <Grid container item direction="row" spacing={75}>
+            <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
+              <VTextField
+                variant="standard"
+                fullWidth
+                name="Solicitante"
+                disabled
+                label="Cinbal Incoflandres"
+                onChange={(e) => setNome(e.target.value)}
                   
-                />
-              </Grid>
+              />
             </Grid>
+          </Grid>
 
-            <Grid container item direction="row" spacing={2}>
-              <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
-                <VTextField
-                  variant="standard"
-                  fullWidth
-                  name="nomeCompleto"
-                  disabled
-                  label="Prestadora de Serviço"
-                  onChange={(e) => setNome(e.target.value)}
-                />
-              </Grid>
+          <Grid container item direction="row" spacing={2}>
+            <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
+              <VTextField
+                variant="standard"
+                fullWidth
+                name="nomeCompleto"
+                disabled
+                label="Prestadora de Serviço"
+                onChange={(e) => setNome(e.target.value)}
+              />
             </Grid>
+          </Grid>
 
-            <Grid container item direction="row" spacing={2}>
-              <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
-                <VTextField
-                  variant="standard"
-                  fullWidth
-                  name="email"
-                  label="Email"
-                  disabled
+          <Grid container item direction="row" spacing={2}>
+            <Grid item xs={12} sm={12} md={6} lg={4} xl={5}>
+              <VTextField
+                variant="standard"
+                fullWidth
+                name="email"
+                label="Email"
+                disabled
 
-                />
-              </Grid>
+              />
+            </Grid>
+          </Grid>
+
+          <Grid container item direction="row" spacing={2}>
+            <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+              <VTextField
+                variant="standard"
+                fullWidth
+                name="dataI"
+                label="Data Inicial"
+                disabled
+
+              />
             </Grid>
 
             <Grid container item direction="row" spacing={2}>
@@ -225,8 +245,8 @@ export const Pdf: React.FC<IAutoCompleteCidadeProps> = () => {
                 <VTextField
                   variant="standard"
                   fullWidth
-                  name="Data"
-                  label="Data"
+                  name="dataF"
+                  label="Data Fim"
                   disabled
 
                 />

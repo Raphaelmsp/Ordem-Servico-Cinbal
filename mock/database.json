@@ -4,10 +4,11 @@
       "id": 158,
       "nomeCompleto": "CASA DO TELEFONE  (status verificação)",
       "email": "casadotefelone@gmail.com",
-      "Data": "21/03/2023",
+      "dataI": "21/03/2023",
+      "dataF": "21/03/2023",
       "Contato": "(24)24439900",
       "cidadeId": 8,
-      "Atividade a ser executada": "Atendimento sobre demanda (verificação de 15 câmeras)\nCâmeras sem imagem no DVR : SD G8, Of.Tambor,  entrada diretoria, antiga seleção,  embalagem, fundo linha de corte 5.\nCaçamba e fardos, porta alm. int, G0 fundos. \nAjustar imagem da cam5 e cam 10 (DVR3)\nG0 reposicionar p/G1.\nArmário celular (falha na imagem e reposicionar marketing reposicionar p/porta do DP.\nAuditório  e relógio de ponto - nova instalação \nrefeitório - verificar imagem noturna\n",
+      "descrição": "Atendimento sobre demanda (verificação de 15 câmeras)\nCâmeras sem imagem no DVR : SD G8, Of.Tambor,  entrada diretoria, antiga seleção,  embalagem, fundo linha de corte 5.\nCaçamba e fardos, porta alm. int, G0 fundos. \nAjustar imagem da cam5 e cam 10 (DVR3)\nG0 reposicionar p/G1.\nArmário celular (falha na imagem e reposicionar marketing reposicionar p/porta do DP.\nAuditório  e relógio de ponto - nova instalação \nrefeitório - verificar imagem noturna\n",
       "Executantes": "Anderson",
       "Descrição detalhada do serviço executado": "Problema encontrado\nAtendimento realizado  em 30/03/2023\nFoi feito o reparo nas câmeras:\nAlmoxarifado 2\nAlmoxarifado 3\nAlmoxarifado 4"
     },
@@ -15,9 +16,10 @@
       "id": 159,
       "nomeCompleto": "CASA DO TELEFONE ",
       "email": "casadotefelone@gmail.com",
-      "Data": "04/04/2023",
+      "dataI": "04/04/2023",
+      "dataF": "",
       "cidadeId": 8,
-      "Atividade a ser executada": "Passar cabo do swite da diretoria até o swite da seleção.",
+      "descrição": "Passar cabo do swite da diretoria até o swite da seleção.",
       "Executantes": "Anderson\nRafael",
       "Descrição detalhada do serviço executado": "Foi passado um novo cabo do swite da diretoria até o swite da seleção."
     },
@@ -25,28 +27,30 @@
       "id": 160,
       "nomeCompleto": "CASA DO TELEFONE ",
       "email": "casadotelefone@gmail.com",
-      "Data": "03/04/2023",
+      "dataI": "03/04/2023",
+      "dataF": "",
       "cidadeId": 8,
-      "Atividade a ser executada": "Montagem do rack da diretoria",
+      "descrição": "Montagem do rack da diretoria",
       "Executantes": "Rafael\n",
       "Descrição detalhada do serviço executado": "Montagem do rack da diretoria\n"
     },
     {
+      "id": 161,
       "nomeCompleto": "CASA DO TELEFONE",
       "email": "casadotelefone@gmail.com",
       "Data": "30/03/2023",
       "cidadeId": 8,
-      "Atividade a ser executada": "Verificar e ne necessário instalar as Câmeras ",
+      "descrição": "Verificar e instalação de Câmeras ",
       "Executantes": "Rafael\nAnderson",
-      "Descrição detalhada do serviço executado": "Speed Dome\nAlmoxarifado 2\nAlmoxarifado 3\nAlmoxarifado 4\nOficina de tambor (pendente elétrica)\nSerralheria (pendente elétrica)",
-      "id": 161
+      "Descrição detalhada do serviço executado": "Speed Dome\nAlmoxarifado 2\nAlmoxarifado 3\nAlmoxarifado 4\nOficina de tambor (pendente elétrica)\nSerralheria (pendente elétrica)"
     },
     {
       "nomeCompleto": "CASA DO TELEFONE",
       "email": "casadotelefone@gmail.com",
-      "Data": "08/03/2023",
+      "dataI": "08/03/2023",
+      "dataF": "",
       "cidadeId": 8,
-      "Atividade a ser executada": "Rack da Produção",
+      "descrição": "Rack da Produção",
       "Executantes": "Rafael",
       "Descrição detalhada do serviço executado": "Organizar os cabos no novo rack da produção",
       "id": 162
@@ -55,23 +59,108 @@
       "id": 163,
       "nomeCompleto": "CASA DO TELEFONE",
       "email": "casadotefone@gmail.com",
-      "Data": "03/05/2023",
+      "dataI": "03/05/2023",
+      "dataF": "",
       "cidadeId": 8,
-      "Atividade a ser executada": "PASSAR NOVO CABO PARA A LITO 3 E ACCESS POINT",
+      "descrição": "PASSAR NOVO CABO PARA A ENV 3 E ACCESS POINT G8",
       "Executantes": "ANDERSON E IRMÃO",
       "Descrição detalhada do serviço executado": "PASSAGEM DE CABO DO RACK DO RH PARA A LITO3 E ACCESS POINT "
-      
     },
     {
+      "id": 164,
       "nomeCompleto": "CASA DO TELEFONE",
       "email": "casadotelefone@gmail.com",
-      "Data": "08/05/2023",
+      "dataI": "08/05/2023",
+      "dataF": "",
       "cidadeId": 8,
-      "Atividade a ser executada": "ORGANIZAR OS CABOS DO RACK DA SALA DO RH",
+      "descrição": "ORGANIZAR OS CABOS DO RACK DA SALA DO RH",
       "Executantes": "RAFAEL",
-      "Descrição detalhada do serviço executado": "ORGANIZAÇÃO DO PATCH COARD NO RACK ",
-      "id": 164
+      "Descrição detalhada do serviço executado": "ORGANIZAÇÃO DO PATCH COARD NO RACK "
+    },
+    {
+      "id": 165,
+      "nomeCompleto": "CASA DO TELEFONE",
+      "email": "casadotefone@gmail.com",
+      "dataI": "30/03/2023",
+      "dataF": "14/04/2023",
+      "cidadeId": 8,
+      "descrição": "INICIO DA PASSAGEM DOS CABOS E NOVAS CAMERAS DA AREA/PRODUÇÃO",
+      "Executantes": "ANDERSON E IRMÃO",
+      "Descrição detalhada do serviço executado": "PASSAGEM DOS CABOS E NOVAS CAMERAS DA AREA/PRODUÇÃO\n07 CAMERAS INSTALADAS\n\nOBS: OS TERMINOU 14/04/2023"
+    },
+
+    {
+      "id": 166,
+      "nomeCompleto": "CASA DO TELEFONE",
+      "email": "casadotefone@gmail.com",
+      "dataI": "19/05/2023",
+      "dataF": "",
+      "cidadeId": 8,
+      "descrição": "FINALIZAÇÃO DA INSTALAÇÃO DE 07 CAMERAS MAIS AP RH\nE TV RH",
+      "Executantes": "ANDERSON E IRMÃO",
+      "Descrição detalhada do serviço executado": "INSTALAÇÃO DE 07 CAMERAS MAIS AP RH"
+    },
+
+    {
+      "id": 167,
+      "nomeCompleto": "CASA DO TELEFONE",
+      "email": "casadotefone@gmail.com",
+      "dataI": "27/04/2023",
+      "dataF": "",
+      "cidadeId": 8,
+      "descrição": "FINALIZAÇÃO PASSAGEM DE 20 CABOS FOTOLITO",
+      "Executantes": "ANDERSON E IRMÃO",
+      "Descrição detalhada do serviço executado": "FINALIZAÇÃO PASSAGEM DE 20 CABOS FOTOLITO"
+    },
+
+    {
+      "id": 168,
+      "nomeCompleto": "CASA DO TELEFONE",
+      "email": "casadotefone@gmail.com",
+      "dataI": "14/04/2023",
+      "dataF": "",
+      "cidadeId": 8,
+      "descrição": "PASSAGEM DE CABO SENCON E OFFINA MECÂNICA",
+      "Executantes": "ANDERSON E IRMÃO",
+      "Descrição detalhada do serviço executado": "FINALIZAÇÃO PASSAGEM DE CABO SENCON E OFFINA MECÂNICA"
+    },
+
+    {
+      "id": 169,
+      "nomeCompleto": "CASA DO TELEFONE",
+      "email": "casadotefone@gmail.com",
+      "dataI": "10/05/2023",
+      "dataF": "",
+      "cidadeId": 8,
+      "descrição": "RESTABELECIMENTO RAMAL OFICINA DE CILINDRO, AREA (G2/G1 E USINAGEM).",
+      "Executantes": "ANDERSON E IRMÃO",
+      "Descrição detalhada do serviço executado": "RAMAL OFICINA DE CILINDRO, AREA (G2/G1 E USINAGEM)"
+    },
+
+    {
+      "id": 170,
+      "nomeCompleto": "CASA DO TELEFONE",
+      "email": "casadotefone@gmail.com",
+      "dataI": "14/06/2023",
+      "dataF": "15/06/2023",
+      "cidadeId": 8,
+      "descrição": "INICIO DA PASSAGEM DOS CABOS E CAMERAS PORTARIA/G8 EXTERNO",
+      "Executantes": "ANDERSON E IRMÃO",
+      "Descrição detalhada do serviço executado": "INICIO DA PASSAGEM DOS CABOS E CAMERAS PORTARIA/G8 EXTERNO\n CONTINUOU DIA 15/06/23"
+    },
+
+    {
+      "id": 171,
+      "nomeCompleto": "CASA DO TELEFONE",
+      "email": "casadotefone@gmail.com",
+      "dataI": "23/06/2023",
+      "dataF": "",
+      "cidadeId": 8,
+      "descrição": "CONTINUIDADE DA PASSAGEM DOS CABOS E CAMERAS PORTARIA/FACHADA FRENTE EXTERNO",
+      "Executantes": "ANDERSON E IRMÃO",
+      "Descrição detalhada do serviço executado": "CONTINUIDADE DA PASSAGEM DOS CABOS E CAMERAS PORTARIA/FACHADA FRENTE EXTERNO"
     }
+
   ],
   "cidades": [
     {
