@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const AppContainer = styled.div`
-  /* position: relative; */
-  /* width: 100%; */
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -14,7 +12,7 @@ export const AppContainer = styled.div`
 
   &:before {
     position: absolute;
-    height: 2000px;
+    height: 1750px;
     width: 2000px;
     top: -10%;
     right: 48%;
@@ -28,19 +26,18 @@ export const AppContainer = styled.div`
 
   }
 
-
   .image {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
 
     transition: transform 1.1s ease-in-out;
     transition-delay: 0.4s;
   }
   .panels-container {
     position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0px;
+    height: 50%;
+    width: 50%;
+    top: 10px;
     left: 0px;
 
     display: grid;
